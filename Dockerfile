@@ -5,6 +5,8 @@ RUN apt-get update && \
     apt-get -y install postfix && \
     rm -r /var/lib/apt/lists
 
+RUN touch /var/log/mail.log
+
 RUN postconf -e message_size_limit=26214400
 
 ENV aliases /etc/aliases_virtual
