@@ -7,6 +7,7 @@ RUN apt-get update && \
 
 RUN touch /var/log/mail.log
 
+RUN postconf -e myhostname=x.st
 RUN postconf -e message_size_limit=26214400
 
 ENV aliases /etc/aliases_virtual
