@@ -11,7 +11,7 @@ ENV hostname x.st
 RUN postconf myhostname=$hostname
 RUN postconf mydestination="$hostname, localhost.localdomain, localhost"
 
-ENV aliases /etc/aliases_virtual
+ENV aliases /etc/postfix/virtual
 RUN postconf -e virtual_alias_maps=hash:$aliases
 COPY secret/aliases $aliases
 RUN postmap $aliases
