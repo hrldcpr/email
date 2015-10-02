@@ -5,9 +5,11 @@ RUN apt-get update && \
     apt-get -y install postfix rsyslog && \
     rm -r /var/lib/apt/lists
 
+RUN postconf message_size_limit=26214400
 
-RUN postconf -e myhostname=x.st
-RUN postconf -e message_size_limit=26214400
+ENV hostname x.st
+RUN postconf myhostname=$hostname
+RUN postconf mydestination="$hostname, localhost.localdomain, localhost"
 
 ENV aliases /etc/aliases_virtual
 RUN postconf -e virtual_alias_maps=hash:$aliases
