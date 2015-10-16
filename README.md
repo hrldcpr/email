@@ -1,8 +1,7 @@
 
 ## Initial Setup
 
-    sudo cp email.service /etc/systemd/system/
-    sudo systemctl enable /etc/systemd/system/email.service
+    sudo systemctl enable $PWD/email.service
 
 ## (Re)building
 
