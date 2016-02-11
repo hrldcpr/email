@@ -6,7 +6,7 @@ RUN apt-get update && \
     rm -r /var/lib/apt/lists
 
 RUN postconf message_size_limit=26214400
-RUN postconf smtpd_tls_security_level=may
+RUN postconf smtp_tls_security_level=may
 
 ENV hostname x.st
 RUN postconf myhostname=$hostname
