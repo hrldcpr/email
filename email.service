@@ -5,6 +5,7 @@ Requires=docker.service
 
 [Service]
 TimeoutStartSec=0
+Restart=on-failure
 ExecStartPre=-/usr/bin/docker rm -f email
 ExecStart=/usr/bin/docker run --name email -p 25:25 -p 465:465 -p 587:587 email
 ExecStop=/usr/bin/docker stop email
