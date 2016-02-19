@@ -7,5 +7,5 @@
 
 Enter forwarding addresses in `secret/aliases`, with each line of the form `me@my.domain me123@hotmail.com`
 
-    docker build -t email .
+    docker build --pull --tag=email .
     sudo systemctl restart email.service
