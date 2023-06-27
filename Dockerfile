@@ -1,7 +1,6 @@
-# TODO add postsrsd to avoid strict SPF forwarding failures?
-# to see how much of a problem it is:
-# docker logs email 2>&1 | grep "fail policy"
-# (only happened once as of June 2023)
+# TODO fix gmail bouncing!
+# docker logs email 2>&1 | grep bounced
+# add postsrsd? switch to protonmail?
 # see https://serverfault.com/questions/1113736/forwarding-to-gmail-account-via-postfix-spf-record-with-a-hard-fail
 
 FROM debian:jessie
