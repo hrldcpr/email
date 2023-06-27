@@ -1,5 +1,6 @@
 # TODO fix gmail bouncing!
 # docker logs email 2>&1 | grep bounced
+# docker logs -t email 2>&1 | grep -C 3 bounced | grep -o -e '.*from=<.*@.*>' | grep -v hrldcpr | cut -c -10,97-
 # add postsrsd? switch to protonmail?
 # see https://serverfault.com/questions/1113736/forwarding-to-gmail-account-via-postfix-spf-record-with-a-hard-fail
 
